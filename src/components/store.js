@@ -5,8 +5,12 @@ export const store = reactive({
         name: 'Germany',
         stops: [
             {
-                name: 'test',
-                date: '08-15-2024'
+                name: 'Miltenberg',
+                date: new Date("2024-08-17"),
+                description: 'A charming town in Bavaria that sits on the left bank of the river Main.',
+                img: 'https://miltenberg.info/wp-content/uploads/2021/02/DREI-AM-MAIN-Miltenberg-von-oben-l-%C2%A9-Holger-Leue.jpg',
+                notes: '',
+                active: false,
             }
         ]
     }

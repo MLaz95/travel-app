@@ -18,7 +18,7 @@ export default{
 </script>
 
 <template>
-  
+  <div class="text-danger">test</div>
 </template>
 
 <style scoped>
