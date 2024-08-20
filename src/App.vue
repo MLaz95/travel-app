@@ -2,6 +2,7 @@
 
 import CardComponent from "./components/CardComponent.vue";
 import { store } from "./components/store"
+import Map from "./components/MapComponent.vue"
 
 
 export default{
@@ -13,11 +14,11 @@ export default{
 
   components:{
     CardComponent,
+    Map
   },
 
   mounted(){
-    console.log(store.trip)
-
+  console.log(store.trip)
   }
 }
 
@@ -28,9 +29,11 @@ export default{
   <div class="container">
     <div class="row row-cols-5">
 
-      <div class="col" v-for="stop in store.trip.stops">
+      <!-- <div class="col" v-for="stop in store.trip.stops">
         <CardComponent :stop="stop"></CardComponent>
-      </div>
+      </div> -->
+
+      <Map />
       
     </div>
   </div>
