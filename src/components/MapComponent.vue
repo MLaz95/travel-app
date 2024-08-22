@@ -1,5 +1,5 @@
 <script>
-import { onMounted, ref } from 'vue';
+import { store } from './store';
 import tt from '@tomtom-international/web-sdk-maps'
 
 
@@ -7,6 +7,7 @@ import tt from '@tomtom-international/web-sdk-maps'
         data(){
             return {
                 map: null,
+                store,
             }
         },
 
@@ -20,11 +21,13 @@ import tt from '@tomtom-international/web-sdk-maps'
                     key: 'NE8Tzmv4CU0XVlD9o90M6K7ysBeHNLBp',
                     container: this.$refs.mapRef,
                     
-                    center: [-120.72217631449985, 42.73919549715691],
-                    zoom: 10,
+                    center: [9.26725, 49.70452],
+                    zoom: 8,
                 })
 
-                new tt.Marker().setLngLat([-120.72217631449985, 42.73919549715691]).addTo(map)
+                store.trip.stops.forEach(stop => {
+                    new tt.Marker().setLngLat(stop.coordinates).addTo(map)
+                });
                 this.map = Object.freeze(map)
             },
         },
