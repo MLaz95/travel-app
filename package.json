@@ -12,6 +12,7 @@
     "@popperjs/core": "^2.11.8",
     "@tomtom-international/web-sdk-maps": "^6.25.0",
     "bootstrap": "^5.3.3",
+    "swiper": "^11.1.10",
     "vue": "^3.4.37"
   },
   "devDependencies": {
