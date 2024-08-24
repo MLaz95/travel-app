@@ -34,9 +34,15 @@ export default{
       <!-- <div class="col" v-for="stop in store.trip.stops">
         <CardComponent :stop="stop"></CardComponent>
       </div> -->
+      <div class="row row-cols-2 my_wrap">
+        <div class="col h-100" style="background-color: pink;">
+          <CarouselComponent></CarouselComponent>
+        </div>
 
-      <Map />
-      <CarouselComponent></CarouselComponent>
+        <div class="col">
+          <Map />
+        </div>
+      </div>
 
       
     </div>
@@ -44,5 +50,9 @@ export default{
 </template>
 
 <style scoped>
+.my_wrap{
+  border: red dashed 1px;
+  height: 700px;
+}
 
 </style>

@@ -35,13 +35,12 @@ import tt from '@tomtom-international/web-sdk-maps'
 </script>
 
 <template>
-    <h1>Map Demo</h1>
     <div id="map" ref="mapRef"></div>
 </template>
 
 <style>
 #map {
-    height: 50vh;
-    width: 50vw;
+    height: 100%;
+    width: 100%;
 }
 </style>

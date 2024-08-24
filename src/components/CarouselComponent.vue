@@ -4,47 +4,54 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
+import { store } from './store';
+import CardComponent from './CardComponent.vue';
 
-export default{
-    data(){
-        return{
+export default {
+    data() {
+        return {
             modules: [Navigation, Pagination],
+            store
         }
     },
 
-    components:{
+    components: {
         Swiper,
         SwiperSlide,
+        CardComponent
     }
 }
 </script>
 
 <template>
-    <swiper
-        :modules="modules"
-        :slides-per-view="1"
-        :loop="true"
-        :navigation="true"
-        :pagination="{
-            type: 'progressbar',
-        }"
-    >
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+    <swiper :modules="modules" :slides-per-view="1" :loop="true" :navigation="true" :direction="'vertical'" :pagination="{
+        type: 'progressbar',
+    }">
+        <swiper-slide v-for="stop in store.trip.stops">
+            <CardComponent :stop="stop"></CardComponent>
+        </swiper-slide>
     </swiper>
 </template>
 
 <style lang="scss">
-    .swiper{
-        height: 300px;
-        margin-top: 2rem;
-        /* position: relative; */
+.swiper {
+    height: 100%;
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        left: 50%;
+        transform: rotate(90deg);
+        transform-origin: left center;
     }
+    
+    .swiper-button-prev {
+        top: 10px;
+    }
+    
+    .swiper-button-next {
+        top: auto;
+        bottom: 10px;
+    }
+}
 
-    /* .swiper-button-prev, .swiper-button-next{
-        position: absolute;
-        left: 0;
-        top:0;
-    } */
 </style>
