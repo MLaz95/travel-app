@@ -19,14 +19,34 @@ export default {
         Swiper,
         SwiperSlide,
         CardComponent
+    },
+
+    methods: {
+        onSwiper(swiper){
+            console.log(swiper)
+        },
+
+        onSlideChange(swiper){
+            // console.log(swiper.realIndex)
+            this.store.trip.active = swiper.realIndex
+            console.log(this.store.trip.active)
+        }
     }
 }
 </script>
 
 <template>
-    <swiper :modules="modules" :slides-per-view="1" :loop="true" :navigation="true" :direction="'vertical'" :pagination="{
+    <swiper
+    :modules="modules"
+    :slides-per-view="1"
+    :loop="true" :navigation="true"
+    :direction="'vertical'"
+    :pagination="{
         type: 'progressbar',
-    }">
+    }"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+    >
         <swiper-slide v-for="stop in store.trip.stops">
             <CardComponent :stop="stop"></CardComponent>
         </swiper-slide>

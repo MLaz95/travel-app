@@ -20,7 +20,7 @@ export default{
   },
 
   mounted(){
-  console.log(store.trip)
+  // console.log(store.trip)
   }
 }
 
@@ -28,17 +28,17 @@ export default{
 
 <template>
   <!-- background image -->
-  <img :src="store.trip.stops[0].img" alt="" class="position-absolute w-100 h-100 object-fit-cover z-n1">
+  <img :src="store.trip.stops[store.trip.active].img" alt="" class="position-absolute w-100 h-100 object-fit-cover z-n1">
   <!-- heading up top -->
   <h1 class="text-center p-5 text-white my_gradient">Current Destination: {{ store.trip.name }}</h1>
 
   <!-- container -->
   <div class="container-flui px-5">
     <!-- separates main in left and right block -->
-      <div class="row row-cols-2 my_wrap">
+      <div class="row row-cols-2 my_wrap p-2">
         
         <!-- carousel component -->
-        <div class="col h-100" style="background-color: pink;">
+        <div class="col h-100">
           <CarouselComponent></CarouselComponent>
         </div>
 
@@ -58,6 +58,8 @@ export default{
 }
 
 .my_wrap{
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   border: red dashed 1px;
   height: 700px;
   /* test */

@@ -20,8 +20,7 @@ import tt from '@tomtom-international/web-sdk-maps'
                 const map = tt.map({
                     key: 'NE8Tzmv4CU0XVlD9o90M6K7ysBeHNLBp',
                     container: this.$refs.mapRef,
-                    
-                    center: [9.26725, 49.70452],
+                    center: this.store.trip.stops[this.store.trip.active].coordinates,
                     zoom: 8,
                 })
 
