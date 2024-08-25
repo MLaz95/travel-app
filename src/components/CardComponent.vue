@@ -10,11 +10,11 @@ export default{
 <template>
 
     
-    <div class="h-100 d-flex flex-column justify-content-between">
-        <h3 class="text-center">{{ stop.date.getDate() }}-{{ stop.date.getMonth() }}-{{ stop.date.getFullYear() }}</h3>
-        <h2 class="text-center">{{ stop.name }}</h2>
+    <div class="h-100 d-flex flex-column justify-content-center px-3 text-white">
+        <h2 class="">{{ stop.date.getDate() }}-{{ stop.date.getMonth() }}-{{ stop.date.getFullYear() }}</h2>
+        <h1 class="text-uppercase">{{ stop.name }}</h1>
         <p>{{ stop.description }}</p>
-        <img :src="stop.img" alt="" class="h-50 object-fit-cover">
+        
     </div>
     
 

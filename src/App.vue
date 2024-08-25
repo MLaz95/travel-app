@@ -27,32 +27,40 @@ export default{
 </script>
 
 <template>
-  <h1 class="text-center p-5 border-bottom border-black">Current Destination: {{ store.trip.name }}</h1>
-  <div class="container">
-    <div>
+  <!-- background image -->
+  <img :src="store.trip.stops[0].img" alt="" class="position-absolute w-100 h-100 object-fit-cover z-n1">
+  <!-- heading up top -->
+  <h1 class="text-center p-5 text-white my_gradient">Current Destination: {{ store.trip.name }}</h1>
 
-      <!-- <div class="col" v-for="stop in store.trip.stops">
-        <CardComponent :stop="stop"></CardComponent>
-      </div> -->
+  <!-- container -->
+  <div class="container-flui px-5">
+    <!-- separates main in left and right block -->
       <div class="row row-cols-2 my_wrap">
+        
+        <!-- carousel component -->
         <div class="col h-100" style="background-color: pink;">
           <CarouselComponent></CarouselComponent>
         </div>
 
+        <!-- map component -->
         <div class="col">
-          <Map />
+          <Map></Map>
         </div>
+        
       </div>
-
-      
-    </div>
   </div>
 </template>
 
 <style scoped>
+
+.my_gradient{
+  background-image: linear-gradient(black, transparent);
+}
+
 .my_wrap{
   border: red dashed 1px;
   height: 700px;
+  /* test */
 }
 
 </style>
