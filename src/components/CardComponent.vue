@@ -1,8 +1,23 @@
 <script>
+import { store } from './store';
+
 
 export default{
     props: {
         stop: Object,
+    },
+
+    data(){
+        return{
+            store
+        }
+    },
+
+    methods:{
+        setActive(stop){
+            this.store.trip.active = stop.id;
+            localStorage.setItem('active', this.store.trip.active);
+        }
     },
 }
 </script>
@@ -14,6 +29,7 @@ export default{
         <h2 class="">{{ stop.date.getDate() }}-{{ stop.date.getMonth() }}-{{ stop.date.getFullYear() }}</h2>
         <h1 class="text-uppercase">{{ stop.name }}</h1>
         <p>{{ stop.description }}</p>
+        <button @click="setActive(stop)" class="btn btn-outline-light" >I'm Here!</button>
         
     </div>
     

@@ -11,7 +11,8 @@ export default {
     data() {
         return {
             modules: [Navigation, Pagination],
-            store
+            store,
+            storageActive: null,
         }
     },
 
@@ -21,17 +22,38 @@ export default {
         CardComponent
     },
 
+    mounted() {
+        this.storageActive = localStorage.getItem('active')
+
+        // if(this.storageActive =! 0){
+        //     this.store.trip.active = localStorage.getItem('active')
+        //     this.store.trip.currentSlide = this.store.trip.active
+        //     console.log('active', this.store.trip.active)
+        //     console.log('slide', this.store.trip.currentSlide)
+        // }
+    },
+
     methods: {
         onSwiper(swiper){
             console.log(swiper)
+            if(this.storageActive =! 0){
+            this.store.trip.active = localStorage.getItem('active')
+            this.store.trip.currentSlide = this.store.trip.active
+            console.log('active', this.store.trip.active)
+            console.log('slide', this.store.trip.currentSlide)
+            }
+
+            if(this.store.trip.active != swiper.realIndex){
+                swiper.slideTo(this.store.trip.active)
+            }
         },
 
         onSlideChange(swiper){
-            // console.log(swiper.realIndex)
-            this.store.trip.active = swiper.realIndex
-            console.log(this.store.trip.active)
+            if(this.store.trip.currentSlide != swiper.realIndex){
+                this.store.trip.currentSlide = swiper.realIndex
+            }
         }
-    }
+    },
 }
 </script>
 
@@ -44,6 +66,7 @@ export default {
     :pagination="{
         type: 'progressbar',
     }"
+    :initialSlide="Number(this.store.trip.active)"
     @swiper="onSwiper"
     @slideChange="onSlideChange"
     >

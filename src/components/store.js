@@ -3,9 +3,11 @@ import {reactive} from 'vue';
 export const store = reactive({
     trip: {
         name: 'Southern Germany',
+        currentSlide: 0,
         active: 0,
         stops: [
             {
+                id: 0,
                 name: 'Miltenberg',
                 date: new Date("2024-08-17"),
                 description: 'A charming town in Bavaria that sits on the left bank of the river Main.',
@@ -14,6 +16,7 @@ export const store = reactive({
                 notes: '',
             },
             {
+                id: 1,
                 name: 'Bad Mergentheim',
                 date: new Date("2024-08-17"),
                 description: 'A spa-town on the Tauber in the Franconian northeast of Baden-Württemberg.',
