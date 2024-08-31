@@ -21,6 +21,8 @@ export default {
   },
 
   mounted() {
+    // when the offcanvas is opened it retrieves the index of the stop that opened it
+    // so that it can be used to set the content within the offcanvas
     const exampleOffCanvas = document.getElementById('offcanvasExample');
     console.log(exampleOffCanvas)
     if (exampleOffCanvas) {
@@ -30,20 +32,21 @@ export default {
       })
     }
 
+    // retrieves notes from localStorage as page loads
     this.getNotes()
   },
 
   methods:{
+    // saves current notes to localStorage
     setNotes(){
       localStorage.setItem("notes" + this.offCanvasIndex, this.store.trip.stops[this.offCanvasIndex].notes)
     },
 
+    // retrieves notes from localStorage
     getNotes(){
       this.store.trip.stops.forEach((stop, index) =>
       stop.notes = localStorage.getItem("notes" + index)
       ) 
-      
-      console.log(this.store.trip)
     }
   }
 
@@ -79,17 +82,19 @@ export default {
   <!-- Offcanvas triggered from CardComponent-->
   <div class="offcanvas offcanvas-start w-50 p-5" data-bs-theme="dark" data-bs-backdrop="false" tabindex="-1"
     id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+
     <div class="offcanvas-header">
-      <!-- <h5 class="offcanvas-title" id="offcanvasExampleLabel">{{ store.trip.stops[offCanvasIndex].name }}</h5> -->
+      <h1 class="text-uppercase title-font">{{ store.trip.stops[offCanvasIndex].name }}</h1>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+
     <div class="offcanvas-body">
-      <h1 class="text-uppercase title-font">{{ store.trip.stops[offCanvasIndex].name }}</h1>
+      <!-- general info -->
       <div class="fs-5">{{ store.trip.stops[offCanvasIndex].paragraph }}</div>
+
+      <!-- personal comments -->
       <div class="mt-2">
-        <label for="notes" class="title-font m-0 fs-3">My Notes</label>
-        <!-- <p v-if="store.trip.stops[offCanvasIndex].notes != ''">{{ store.trip.stops[offCanvasIndex].notes }}</p>
-        <div v-else class="fst-italic">No notes yet</div> -->
+        <label for="notes" class="title-font m-0 fs-3">Notes</label>
         <div class="input-group mt-2">
           <textarea
           id="notes"
@@ -101,6 +106,7 @@ export default {
         </div>
       </div>
 
+      <!-- gallery -->
       <h3 class="title-font mt-3">Gallery</h3>
       <div class="row row-cols-2 row-gap-3">
         <div v-for="img in store.trip.stops[offCanvasIndex].img" class="">
