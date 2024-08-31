@@ -33,6 +33,20 @@ export const store = reactive({
                 ],
                 notes: '',
             },
+            {
+                id: 2,
+                name: 'Würzburg',
+                date: new Date("2024-08-17"),
+                description: 'The third largest city in Franconia',
+                paragraph: 'Würzburg is a city in Germany\'s Bavaria region. It\'s known for lavish baroque and rococo architecture, particularly the 18th-century Residenz palace, with ornate rooms, a huge fresco by Venetian artist Tiepolo and an elaborate staircase. Home to numerous wine bars, cellars and wineries, Würzburg is the center of the Franconian wine country, with its distinctive bocksbeutel (bottles with flattened round shapes).',
+                coordinates: [9.926119, 49.793314],
+                img: [
+                    'https://www.annees-de-pelerinage.com/wp-content/uploads/2019/11/old-town-w%C3%BCrzburg-cover.jpg',
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marienberg_wuerzburg.jpg/1200px-Marienberg_wuerzburg.jpg',
+                    'https://traveladdicts.net/wp-content/uploads/2014/09/German-Wurzburg-old-town-Domstrasse.jpg'
+                ],
+                notes: '',
+            },
         ]
     }
 })
