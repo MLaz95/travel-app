@@ -24,13 +24,6 @@ export default {
 
     mounted() {
         this.storageActive = localStorage.getItem('active')
-
-        // if(this.storageActive =! 0){
-        //     this.store.trip.active = localStorage.getItem('active')
-        //     this.store.trip.currentSlide = this.store.trip.active
-        //     console.log('active', this.store.trip.active)
-        //     console.log('slide', this.store.trip.currentSlide)
-        // }
     },
 
     methods: {
@@ -85,6 +78,7 @@ export default {
         left: 50%;
         transform: rotate(90deg);
         transform-origin: left center;
+        color: white;
     }
     
     .swiper-button-prev {
@@ -94,6 +88,10 @@ export default {
     .swiper-button-next {
         top: auto;
         bottom: 10px;
+    }
+
+    .swiper-pagination-progressbar-fill{
+        background-color: white;
     }
 }
 
