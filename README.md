@@ -8,17 +8,10 @@ In the future the site could be augmented by a true back-end structure to more e
 
 ## How to Install
 
-To run the project on your local machine you'll need to install [node.js](https://nodejs.org/) and you'll need your own [TomTom API Key](https://developer.tomtom.com/platform/documentation/dashboard/api-key-management).
+To run the project on your local machine you'll need to install [node.js](https://nodejs.org/)
 
-1. create a config.js file inside the project.
-2. add the following code to the file replacing the placeholder with your API key
-    ```
-    let config ={
-    TOMTOM_KEY: '<Your TomTom API key>',
-    }   
-    ```
-3. Open a terminal or command line tool in the same folder.
-4. `npm i`, this will install all npm modules necessary to run the project in offline mode.
-5. `npm run dev` to then start your dev server.
+1. Open a terminal or command line tool in the project folder.
+2. `npm i`, this will install all npm modules necessary to run the project in offline mode.
+3. `npm run dev` to then start your dev server.
 
 
