@@ -127,7 +127,7 @@ export default {
 .my_wrap {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  border: red dashed 1px;
+  /* border: red dashed 1px; */
   height: 700px;
   /* test */
 }
