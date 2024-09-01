@@ -59,7 +59,7 @@ export default {
   <img :src="store.trip.stops[store.trip.currentSlide].img[0]" alt=""
     class="position-absolute w-100 h-100 object-fit-cover z-n1">
   <!-- heading up top -->
-  <h1 class="text-center p-5 text-white my_gradient">Current Destination: {{ store.trip.name }}</h1>
+  <h1 class="text-center p-5 text-white my_gradient title-font" style="font-size: 75px;">{{ store.trip.name }}</h1>
 
   <!-- container -->
   <div class="container-flui px-5">

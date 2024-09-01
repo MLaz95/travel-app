@@ -48,7 +48,7 @@ export default{
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 h1.title-font{
     font-size: 100px;
