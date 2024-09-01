@@ -33,7 +33,7 @@ import tt from '@tomtom-international/web-sdk-maps'
             // creates the map
             initializeMap(){
                 const map = tt.map({
-                    key: config.TOMTOM_KEY,
+                    key: 'NE8Tzmv4CU0XVlD9o90M6K7ysBeHNLBp',
                     container: this.$refs.mapRef,
                     center: this.store.trip.stops[this.store.trip.currentSlide].coordinates,
                     zoom: 8,
