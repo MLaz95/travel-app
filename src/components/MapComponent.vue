@@ -61,7 +61,7 @@ import tt from '@tomtom-international/web-sdk-maps'
             updateMapCenter(){
                 this.map.flyTo({
                     "center": this.store.trip.stops[this.store.trip.currentSlide].coordinates,
-                    "zoom": 8.5,
+                    "zoom": 9,
                 })
             },
 
